@@ -5,10 +5,30 @@ let list = document.querySelector("ul");
 button.addEventListener("click", (event) => {
     event.preventDefault();
 
-    let task = input.value;
+    let vazifa = input.value;
     let li = document.createElement("li");
+    let span = document.createElement("span");
 
-    li.textContent = task;
+    let done = document.createElement("button");
+    let del = document.createElement("button");
+
+    done.addEventListener("click", (event) => {
+
+    });
+
+    del.addEventListener("click", (event) => {
+        event.preventDefault();
+        
+        li.remove();
+    });
+
+    span.textContent = vazifa;
+    done.textContent = "Done";
+    del.textContent = "Delete";
+
+    li.appendChild(span);
+    li.appendChild(done);
+    li.appendChild(del);
 
     list.appendChild(li);
 
